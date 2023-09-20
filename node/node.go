@@ -8,7 +8,7 @@ type Node struct {
 }
 
 func initNode(name string, main func(*Node)) *Node {
-	r := Node{
+	r := &Node{
 		name,
 		make(chan Message),
 		[]Message{},
@@ -18,5 +18,7 @@ func initNode(name string, main func(*Node)) *Node {
 }
 
 func addOutgoing(node *Node, toAdd *Node) *Node {
+	newOutgoing := &toAdd.incoming
+	append(&node.outgoing, newOutgoing)
 	return node
 }

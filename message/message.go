@@ -1,5 +1,6 @@
 package message
 
 type Message struct {
-	message int
+	Value   int
+	Pub_key int
 }
