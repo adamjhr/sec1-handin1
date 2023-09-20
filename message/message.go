@@ -1,5 +1,5 @@
 package message
 
-type message struct {
+type Message struct {
 	message int
 }
