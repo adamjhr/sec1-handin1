@@ -4,7 +4,6 @@ import (
 	"fmt"
 	"math/big"
 	"math/rand"
-	"github.com/adamjhr/sec1-handin1/node"
 )
 
 func aliceMain(self *Node) {
