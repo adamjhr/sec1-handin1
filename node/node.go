@@ -1,14 +1,10 @@
 package node
 
-import (
-	"github.com/adamjhr/sec1-handin1/message"
-)
-
 type Node struct {
-	name     string
-	incoming chan Message
-	outgoing []*chan Message
-	main     func(*Node)
+	Name     string
+	Incoming chan Message
+	Outgoing []*chan Message
+	Main     func(*Node)
 }
 
 func initNode(name string, main func(*Node)) *Node {
