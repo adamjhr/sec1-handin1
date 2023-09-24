@@ -1,5 +1,9 @@
 package node
 
+import (
+	"github.com/adamjhr/sec1-handin1/message"
+)
+
 type Node struct {
 	name     string
 	incoming chan Message

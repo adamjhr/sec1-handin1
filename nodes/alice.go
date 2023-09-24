@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"math/big"
 	"math/rand"
+	"github.com/adamjhr/sec1-handin1/node"
 )
 
 func aliceMain(self *Node) {
@@ -24,7 +25,7 @@ func aliceMain(self *Node) {
 	key := key_big.Uint64()
 	fmt.Println("My own public key is ", key)
 
-	message := Message{Value: m_encr, Pub_key: key}
+	message := Message{Sender: "Alice", Value: m_encr, Pub_key: key}
 
 	for _, channel := range &self.outgoing {
 		&channel <- message
