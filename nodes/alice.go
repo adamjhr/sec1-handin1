@@ -6,7 +6,7 @@ import (
 	"math/rand"
 )
 
-func aliceMain(self *Node) {
+func AliceMain(self *Node) {
 	g := 666
 	p := 6661
 	pub_key := 2227
