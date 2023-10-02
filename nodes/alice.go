@@ -13,19 +13,19 @@ import (
 func AliceMain(self *node.Node) {
 	g := 666
 	p := 6661
-	bob_pub_key := 2227
+	bob_pk := 2227
 	m := 2000
 	rand.Seed(time.Now().UnixNano())
 	y := rand.Intn(p)
 	fmt.Println(self.Name, ": i'm encrypting the message", m, "with y =", y)
 
-	m_encr := calc.BigModulus(bob_pub_key, y, p) * m
+	m_encr := calc.BigModulus(bob_pk, y, p) * m
 	fmt.Println(self.Name, ": the encrypted message is", m_encr)
 
-	key := calc.BigModulus(g, y, p)
-	fmt.Println(self.Name, ": my own public key is", key)
+	pk := calc.BigModulus(g, y, p)
+	fmt.Println(self.Name, ": my own public key is", pk)
 
-	message := message.Message{Sender: "Alice", Value: m_encr, Pub_key: key}
+	message := message.Message{Sender: "Alice", Value: m_encr, Pub_key: pk}
 	fmt.Println(self.Name, ": broadcasting message")
 
 	for _, channel := range self.Outgoing {
